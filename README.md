@@ -2,16 +2,17 @@
 > This is a homework for Applied Deep Learning
 
 ## ***Environments***
-----------------------------------------------------------------------------------------
+```
 pip install -r requirements.in
-
+```
 
 ## ***Preprocess Data Format***
-----------------------------------------------------------------------------------------
+```
 python preprocess_data.py --train_file /path/to/data/train.json --validation_file /path/to/data/valid.json
+```
 
 ## ***Context Selection***
-----------------------------------------------------------------------------------------
+```
 Train & Valid multiple-choice with 'bert-base-chinese':
 python run_swag.py \
   --do_train \
@@ -26,7 +27,8 @@ python run_swag.py \
   --learning_rate 3e-5 \
   --num_train_epochs 1 \
   --warmup_ratio 0.1
-
+```
+```
 Test multiple-choice with 'bert-base-chinese':
 python run_swag.py \
   --do_predict \
@@ -39,12 +41,10 @@ python run_swag.py \
   --cache_dir ./cache/ \
   --pad_to_max_length \
   --max_seq_length 512
-
-----------------------------------------------------------------------------------------
+```
 
 ## ***Question Answering***
-----------------------------------------------------------------------------------------
-
+```
 Train & Valid question_answering with 'hfl/chinese-roberta-wwm-ext':
 python run_qa.py \
   --do_train_and_valid \
@@ -60,7 +60,8 @@ python run_qa.py \
   --max_seq_length 512 \
   --pad_to_max_length \
   --doc_stride 128
-
+```
+```
 Test question-answering with 'hfl/chinese-roberta-wwm-ext':
 python run_qa.py \
   --do_predict \
@@ -75,8 +76,8 @@ python run_qa.py \
   --max_seq_length 512 \
   --doc_stride 128 \
   --per_device_eval_batch_size 4
-
-----------------------------------------------------------------------------------------
+```
 ## ***Postprocess Prediction***
-----------------------------------------------------------------------------------------
-  python toCSV.py --input_predictions /path/to/predict/QA/eval_predictions.json --output_predictions /path/to/pred/prediction.csv
+```
+python toCSV.py --input_predictions /path/to/predict/QA/eval_predictions.json --output_predictions /path/to/pred/prediction.csv
+```
